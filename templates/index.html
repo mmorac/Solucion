@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--CSS Propio-->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>
+    </title>
+  </head>
+  <body>
+    <div class="contenedor">
+      <table>
+        <tr>
+          <td>
+            <label>
+              Seleccione un archivo de entrada (debe estar en la carpeta Documents)
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <form method="post" name="seleccionar_archivo" action="{{ url_for('index') }}">
+              <input type="file" name="archivo_entrada"></input>
+          </td>
+        </tr>
+        <tr>
+          <td>
+              <input type="submit" value="Procesar" class="boton"/>
+            </form>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>
+              {{ mensaje }}
+            </label>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>
